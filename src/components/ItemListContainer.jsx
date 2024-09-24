@@ -26,7 +26,7 @@ export const ItemListContainer = ({greeting}) => {
                Recomendaciones
            </h2>
         <div className='items-varios'>
-              <Items></Items>
+              <Items/>
         </div>
        </div>      
         

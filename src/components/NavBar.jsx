@@ -14,7 +14,7 @@ const NavBar = () => {
               <h1>Fowards</h1>
           </div>
          <div className='container-carritoYlog'>
-               <CartWidget></CartWidget>            
+               <CartWidget/>          
          </div>
           <div className='container-links'>
               <ul>
