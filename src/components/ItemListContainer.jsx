@@ -8,6 +8,7 @@ import calzaMasculina from '../assets/calza-masculina.jpg'
 import remeraBasicaM from '../assets/remera-basica-mujer.jpg'
 import shortMasculinoN from '../assets/short-negro.jpg'
 import { Items } from './Items'
+import ContainerFlechas from './ContainerFlechas'
 
 
 export const ItemListContainer = ({greeting}) => {
@@ -30,6 +31,7 @@ export const ItemListContainer = ({greeting}) => {
            </h2>
 
         <div className='items-varios'>
+          <ContainerFlechas/>
              <Items>
               <h3>
                  Calza masculina
