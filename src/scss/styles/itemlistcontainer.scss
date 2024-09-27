@@ -22,44 +22,82 @@
         font-size: 50px;
     }
 
-    .subtitulo-recomendaciones{
-        display: flex;
-        align-items: initial;
-        height: 300px;
-    }
-
     .container-carruselAuto {
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 100%;
-        height: 100%;
+        height: 50%;
+        overflow: hidden;
+        gap: 400px;
         padding-left: 300px;
-        margin-top: 30px;
 
-        .carrusel-auto {
+        .tarjet-carrusel{
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 800px;
-            height: 750px;
-            border-radius: 10px;
+            background: linear-gradient(90deg,green,lime,green);
+            min-width: 900px;
+            height: 500px;
+            border-radius: 50px;
             overflow: hidden;
-            gap: 30px;
-            position: relative;
-
-
-            img {
+            gap: 20px;
+            padding: 20px;
+            animation-name: mover-carrusel;
+            animation-duration: 40s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            box-shadow: 0 0 100px;
+            figure {
                 display: flex;
-                max-width: 750px;
-                border-radius: 10px;
-                animation: mover-carrusel ease-in-out 60s infinite;
-                cursor: pointer;
+                width: 400px;
+                height: 400px;
+                overflow: hidden;
+                border-radius: 30px;
+                img{
+                    width: 100%;
+                }
+                box-shadow: 0 0 10px;
             }
 
-
+            .container-textButton{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 85%;
+                background: linear-gradient(180deg,rgba(128, 128, 128, 0.63),rgba(255, 255, 255, 0.719));
+                overflow: hidden;
+                border-radius: 20px;
+                gap: 30px;
+                box-shadow: 0 0 10px 5px;
+                p{
+                    font-family: "Anton", sans-serif ;
+                    font-size: 20px;
+                    padding: 20px;
+                    border-radius: 10px;
+                }
+                button {
+                    background-color: black;
+                    font-family:"Anton", sans-serif  ;
+                    color: aliceblue;
+                    font-size: 20px;
+                    width: 150px;
+                    height:50px;
+                    border-radius: 30px;
+                    border: none;
+                    cursor: pointer;
+                    &:hover {
+                        box-shadow: 0 0 100px 30px;
+                        color: black;
+                        text-shadow: 0px 0px 50px black;
+                        background: linear-gradient(lime,green,lime);
+                    }
+                }
+            }
         }
     }
-
 
 }
 

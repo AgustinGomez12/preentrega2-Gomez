@@ -9,27 +9,26 @@ import remeraBasicaM from '../assets/remera-basica-mujer.jpg'
 import shortMasculinoN from '../assets/short-negro.jpg'
 import { Items } from './Items'
 import ContainerFlechas from './ContainerFlechas'
+import Titles from './Titles'
+import CarruselAuto from './CarruselAuto'
 
 
 export const ItemListContainer = ({greeting}) => {
   return (
-    <>
+    <main>
        <div className='container-listItem'>
             <h2>
                 {greeting}
             </h2>
-
-            <div className='container-carruselAuto'>
-                <div className='carrusel-auto'>
-                    <img src={remeraRugbyFemenino} alt="" />
-                    <img src={remeraFutbol} alt="" />
-                    <img src={remeraBasica} alt="" />
-                </div>
-           </div>
-           <h2 className='subtitulo-recomendaciones'>
-               Recomendaciones
-           </h2>
-
+            <CarruselAuto>
+               
+            </CarruselAuto>
+        <div/>
+        <Titles>
+          <h2>
+            Recomendaciones
+          </h2>
+        </Titles>
         <div className='items-varios'>
           <ContainerFlechas/>
              <Items>
@@ -82,6 +81,6 @@ export const ItemListContainer = ({greeting}) => {
         </div>
 
        </div>              
-    </>
+    </main>
   )
 }
