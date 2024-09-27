@@ -96,7 +96,9 @@
                 color: aliceblue;
                 cursor: pointer;
                 &:hover {
-                    background-color: violet;
+                    color: coral;
+                    text-shadow: 0 10px 20px black;
+                    zoom: 1.3;
                 }
             }
         }

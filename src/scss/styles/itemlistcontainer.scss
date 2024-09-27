@@ -78,54 +78,5 @@
     padding-top: 10px;
     padding-bottom: 10px;
     
-
-    .item {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 300px;
-        height: 400px;
-        background: linear-gradient(180deg,green,rgba(0, 0, 0, 0.822));
-        border-radius: 10px;
-        gap:15px;
-        &:hover{
-                zoom: 1.1
-            }
-        figure{
-            display: flex;
-            width: 250px;
-            padding: 10px;   
-            img{
-                width: 100%;
-                border-radius: 10px;
-                cursor: pointer;
-            }
-        }
-        
-        h3{
-            font-family:"Anton", sans-serif;
-            color: aliceblue;
-            letter-spacing: 3px;
-        }
-
-        p{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: aliceblue;
-            letter-spacing: 3px;
-        }
-
-        button{
-            width: 120px;
-            height: 30px;
-            font-family:"Anton", sans-serif ;
-            border: none;
-            border-radius: 10px;
-            background: linear-gradient(180deg,lime,green);
-            color: white;
-            cursor: pointer;
-            &:hover{
-                box-shadow: 0 0 10px 5px green;
-            }
-        }
-    }
+    
 }
