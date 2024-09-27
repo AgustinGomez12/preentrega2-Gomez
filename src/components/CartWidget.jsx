@@ -1,12 +1,10 @@
-import React from 'react'
-import  carrito  from "../assets/shopping-cart-svgrepo-com.svg";
-import logoRegistro from "../assets/id-card-svgrepo-com.svg"
+import React from "react";
+import carrito from "../assets/shopping-cart-svgrepo-com.svg";
 export const CartWidget = () => {
   return (
-    <>
-       <img src={carrito} alt="" />
-       <span>(0)</span>
-       <img src={logoRegistro} alt="" />
-    </>
-  )
-}
+    <div className="container-carrito">
+      <img src={carrito} alt="" />
+      <span>(0)</span>
+    </div>
+  );
+};
