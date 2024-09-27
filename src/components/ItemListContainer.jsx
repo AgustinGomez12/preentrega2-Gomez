@@ -4,6 +4,9 @@ import '../scss/styles/base.scss'
 import remeraRugbyFemenino from '../assets/remera-rugby-f.jpg'
 import remeraFutbol from '../assets/remera-futbol.jpg'
 import remeraBasica from '../assets/remera-basica.jpg'
+import calzaMasculina from '../assets/calza-masculina.jpg'
+import remeraBasicaM from '../assets/remera-basica-mujer.jpg'
+import shortMasculinoN from '../assets/short-negro.jpg'
 import { Items } from './Items'
 
 
@@ -25,11 +28,58 @@ export const ItemListContainer = ({greeting}) => {
            <h2 className='subtitulo-recomendaciones'>
                Recomendaciones
            </h2>
+
         <div className='items-varios'>
-              <Items/>
+             <Items>
+              <h3>
+                 Calza masculina
+              </h3>
+              <figure>
+                <img src={calzaMasculina} alt="" />
+              </figure>
+              <button>
+                Añadir al carrito
+              </button>
+             </Items>
+
+             <Items>
+              <h3>
+                 Remera basica Femenina
+              </h3>
+              <figure>
+                <img src={remeraBasicaM} alt="" />
+              </figure>
+              <button>
+                Añadir al carrito
+              </button>
+             </Items>
+
+             <Items>
+              <h3>
+                 Remera basica Masculina
+              </h3>
+              <figure>
+                <img src={remeraBasica} alt="" />
+              </figure>
+              <button>
+                Añadir al carrito
+              </button>
+             </Items>
+
+               <Items>
+              <h3>
+                 Short masculino negro
+              </h3>
+              <figure>
+                <img src={shortMasculinoN} alt="" />
+              </figure>
+              <button>
+                Añadir al carrito
+              </button>
+             </Items>     
         </div>
-       </div>      
-        
+
+       </div>              
     </>
   )
 }
