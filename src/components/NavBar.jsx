@@ -1,10 +1,10 @@
-import React from "react";
 import imgenLogo from "../assets/logo-fowards.png";
 import "../scss/styles/base.scss";
 import "../scss/styles/navbar.scss";
 import { CartWidget } from "./CartWidget";
 
-const NavBar = () => {
+const NavBar = ({cuenta}) => {
+   
   return (
     <header>
       <div className="contenedor-navbar">
@@ -13,12 +13,12 @@ const NavBar = () => {
           <h1>Fowards</h1>
         </div>
         <div className="container-estructuraCarYSpan">
-          <CartWidget />
+          <CartWidget cuenta={cuenta}/>
         </div>
         <div className="container-links">
           <ul>
             <li>
-              <a href="">Inicio</a>
+              <a href="" >Inicio</a>
             </li>
             <li>
               <a href="">Remeras</a>

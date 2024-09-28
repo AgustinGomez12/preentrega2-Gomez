@@ -1,10 +1,10 @@
-import React from "react";
 import carrito from "../assets/shopping-cart-svgrepo-com.svg";
-export const CartWidget = () => {
+export const CartWidget = ({cuenta}) => {
+  
   return (
     <div className="container-carrito">
       <img src={carrito} alt="" />
-      <span>(0)</span>
+      <span>({cuenta})</span>
     </div>
   );
 };
