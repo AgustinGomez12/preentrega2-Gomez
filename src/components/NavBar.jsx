@@ -1,10 +1,12 @@
+import { useEffect } from "react";
 import imgenLogo from "../assets/logo-fowards.png";
 import "../scss/styles/base.scss";
 import "../scss/styles/navbar.scss";
 import { CartWidget } from "./CartWidget";
 
 const NavBar = ({cuenta}) => {
-   
+
+
   return (
     <header>
       <div className="contenedor-navbar">
