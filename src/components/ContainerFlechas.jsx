@@ -2,23 +2,24 @@ import flechaIzq from '../assets/flecha-izq.svg'
 import flechaDer from '../assets/flecha-der.svg'
 const ContainerFlechas = ({children,position,moverPotitionD}) => {
  const moverDer = () => {
-  if(position.left >= 450){
+    if(position.left >= 3800){
+
+    }else{
+      moverPotitionD({
+        left: position.left + 300
+      })
+    }
     
-  }else{
-    moverPotitionD({
-      left: position.left + 150 
-    })
-  }
  }
 
  const moverIzq = () => {
-  if(position.left <= -450){
+    if(position.left <= -3800){
 
-  }else{
-    moverPotitionD({
-      left: position.left - 150
-    })
-  }
+    }else{
+      moverPotitionD({
+        left: position.left -300
+      })
+    }
 }
   return (
     <div className='container-flechas'>
