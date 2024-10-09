@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import imgenLogo from "../assets/logo-fowards.png";
 import "../scss/styles/base.scss";
 import "../scss/styles/navbar.scss";
 import { CartWidget } from "./CartWidget";
+
 
 const NavBar = ({cuenta}) => {
 
@@ -18,13 +20,13 @@ const NavBar = ({cuenta}) => {
         <div className="container-links">
           <ul>
             <li>
-              <a href="" >Inicio</a>
+              <Link to={"/preentrega1-Gomez"} >Inicio</Link>
             </li>
             <li>
-              <a href="">Remeras</a>
+              <Link to={"/category/Remeras"}>Remeras</Link>
             </li>
             <li>
-              <a href="">Pantalones</a>
+              <Link to={"/category/Pantalones"}>Pantalones</Link>
             </li>
             <li>
               <a href="">Shorts</a>
