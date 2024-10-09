@@ -3,7 +3,7 @@ import "../scss/styles/base.scss";
 import ContainerFlechas from "./ContainerFlechas";
 import Titles from "./Titles";
 import CarruselAuto from "./CarruselAuto";
-import { useState } from "react";
+import {useState } from "react";
 import productosData from "../assets/MOCK_DATA (1).json";
 import ItemList from "./ItemList";
 
@@ -16,7 +16,7 @@ export const ItemListContainer = ({ greeting, aumentarCuenta }) => {
       <div className="container-listItem">
         <h2>{greeting}</h2>
         <CarruselAuto></CarruselAuto>
-        <div />
+        <div/>
         <Titles>
           <h2>Recomendaciones</h2>
         </Titles>

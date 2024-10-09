@@ -1,7 +1,7 @@
 {
   "name": "tienda-onfowards",
   "private": true,
-  "homepage":"https://github.com/AgustinGomez12/preentrega1-Gomez.git/build",
+  "homepage": "https://github.com/AgustinGomez12/preentrega1-Gomez.git/build",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -13,6 +13,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
     "sass": "^1.78.0"
   },
   "devDependencies": {
