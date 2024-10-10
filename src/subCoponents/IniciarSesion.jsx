@@ -1,10 +1,8 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import "../scss/styles/inciarsecion.scss";
 const IniciarSesion = () => {
   return (
     <main className="main-iniciarSesion">
-      <NavBar />
       <div className="container-iniciarSecion">
         <h2>Iniciar sesiòn</h2>
         <div className="container-inputs">

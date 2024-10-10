@@ -1,13 +1,14 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import imgenLogo from "../assets/logo-fowards.png";
 import "../scss/styles/base.scss";
 import "../scss/styles/navbar.scss";
 import "../scss/styles/linksstyle.scss";
 import { CartWidget } from "./CartWidget";
 
-const NavBar = ({ cuenta }) => {
+const NavBar = ({ cuenta, children }) => {
   return (
     <header>
+      {children}
       <div className="contenedor-navbar">
         <div className="container-logo">
           <img src={imgenLogo} alt="" />
@@ -23,7 +24,7 @@ const NavBar = ({ cuenta }) => {
                 className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
                 }}
-                to={"/preentrega1-Gomez"}
+                to={`/`}
               >
                 Inicio
               </NavLink>
@@ -31,42 +32,42 @@ const NavBar = ({ cuenta }) => {
             <li>
               <NavLink className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
-                }} to={"/category/Remeras"}>
+                }} to={`/category/Remeras`}>
                 Remeras
               </NavLink>
             </li>
             <li>
               <NavLink className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
-                }} to={"/category/Pantalones"}>
+                }} to={`/category/Pantalones`}>
                 Pantalones
               </NavLink>
             </li>
             <li>
               <NavLink className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
-                }} to={"/category/Shorts"}>
+                }} to={`/category/Shorts`}>
                 Shorts
               </NavLink>
             </li>
             <li>
               <NavLink className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
-                }} to={"/category/Registrarse"}>
+                }} to={"/Registrarse"}>
                 Registrarse
               </NavLink>
             </li>
             <li>
               <NavLink className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
-                }} to={"/category/Iniciar sesiòn"}>
+                }} to={"/Iniciar sesiòn"}>
                 iniciar sesión
               </NavLink>
             </li>
             <li>
               <NavLink className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
-                }} to={"/category/Quienes Somos"}>
+                }} to={"/Quienes Somos"}>
                 ¿Quienes somos?
               </NavLink>
             </li>

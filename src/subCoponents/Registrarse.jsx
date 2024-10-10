@@ -1,11 +1,8 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
 import "../scss/styles/registro.scss"
-import ContainerObjets from './ContainerObjets'
-const Registrarse = () => {
+const Registrarse = ({cuenta}) => {
   return (
     <main className='main-registrarse'>
-        <NavBar/>
         <div className='container-registro'>
             <h2>
                 Registrate

@@ -16,7 +16,6 @@ export const ItemListContainer = ({ greeting, aumentarCuenta,cuenta,children }) 
 
   return (
     <main>   
-      <NavBar cuenta={cuenta}/>
       <div className="container-listItem">
         <h2>{greeting}</h2>
         <h2>{children}</h2> 

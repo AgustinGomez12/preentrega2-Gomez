@@ -1,10 +1,8 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import "../scss/styles/quienessomos.scss";
 const QuienesSomos = () => {
   return (
     <main className="main-quienesSomos">
-      <NavBar />
       <div className="container-elemetos">
         
       </div>
