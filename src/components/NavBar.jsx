@@ -29,16 +29,16 @@ const NavBar = ({cuenta}) => {
               <Link to={"/category/Pantalones"}>Pantalones</Link>
             </li>
             <li>
-              <a href="">Shorts</a>
+              <Link to={"/category/Shorts"}>Shorts</Link>
             </li>
             <li>
-              <a href="">Registrarse</a>
+              <Link to={"/category/Registrarse"}>Registrarse</Link>
             </li>
             <li>
-              <a href="">iniciar sesión</a>
+              <Link to={"/category/Iniciar sesiòn"}>iniciar sesión</Link>
             </li>
             <li>
-              <a href="">¿Quienes somos?</a>
+              <Link to={"/category/Quienes Somos"}>¿Quienes somos?</Link>
             </li>
           </ul>
         </div>
