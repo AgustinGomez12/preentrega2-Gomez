@@ -1,19 +1,13 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import "../scss/styles/pantalones.scss"
-import ContainerObjets from './ContainerObjets'
+import { ItemListContainer } from '../components/ItemListContainer'
 const Pantalones = () => {
   return (
     <main className='main-pantalones'>
-        <NavBar/>
-        <div className='container-pantalones'>
-             <h2>
-                Pantalones
-             </h2>
-             <ContainerObjets>
-                
-             </ContainerObjets>
-        </div>
+        <ItemListContainer>
+          <h2 className='tituloPantalones'>PANTALONES</h2>
+        </ItemListContainer>
     </main>
   )
 }

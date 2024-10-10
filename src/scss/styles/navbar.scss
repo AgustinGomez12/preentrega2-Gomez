@@ -85,7 +85,7 @@
             li{
                 list-style: none;
             }
-            a{  
+            .links{  
                 display: flex;
                 align-items: center;
                 height: 50px;
@@ -101,6 +101,8 @@
                     zoom: 1.1;
                 }
             }
+
+            
         }
     }
 

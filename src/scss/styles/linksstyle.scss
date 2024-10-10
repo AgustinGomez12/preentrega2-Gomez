@@ -1,0 +1,18 @@
+.linksNoactivo {
+    display: flex;
+                align-items: center;
+                height: 50px;
+                padding-left: 20px;
+                font-size: 35px;
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+                color: aliceblue;
+                background: linear-gradient(90deg,lime,coral,lime);
+                opacity: 70%;
+                cursor: pointer;
+                &:hover {
+                    color: coral;
+                    text-shadow: 0 10px 20px black;
+                    zoom: 1.1;
+                }
+}

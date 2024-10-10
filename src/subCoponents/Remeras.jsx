@@ -1,19 +1,17 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
 import '../scss/styles/remeras.scss'
-import ContainerObjets from './ContainerObjets'
-const Remeras = () => {
+import { ItemListContainer } from '../components/ItemListContainer'
+
+
+
+
+const Remeras = ({aumentarCuenta},{cuenta}) => {
   return (
     
     <main className='main-Remeras'>
-     <NavBar/>
-     <div className='container-remeras'>
-         <h2>Remeras</h2>
-        <ContainerObjets>
-           
-        </ContainerObjets>
-     </div>
-
+     <ItemListContainer aumentarCuenta={aumentarCuenta} cuenta={cuenta}>
+      <h2 className='tituloRemeras'>Remeras</h2>
+     </ItemListContainer>
     </main>
   )
 }
