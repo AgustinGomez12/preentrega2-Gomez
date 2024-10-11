@@ -6,6 +6,8 @@ import Registrarse from "./subCoponents/Registrarse"
 import IniciarSesion from "./subCoponents/IniciarSesion"
 import QuienesSomos from "./subCoponents/QuienesSomos"
 import NavBar from "./components/NavBar"
+import ItemDetailContainer from "./components/ItemDetailContainer"
+
 
 function App() {
   const [cuenta,aumentarCuenta] = useState(0)
@@ -14,13 +16,12 @@ function App() {
     <NavBar cuenta={cuenta}>
     <Routes>
       <Route path="/" element={<ItemListContainer greeting = "INICIO" aumentarCuenta={aumentarCuenta} cuenta={cuenta}/>}/>
-      <Route path="*" element={<Err404/>}/>
-      <Route path="/category/:Remeras" element={<ItemListContainer greeting = "REMERAS" aumentarCuenta={aumentarCuenta} cuenta={cuenta}/>}/>
-      <Route path="/category/:categoryid" element={<ItemListContainer greeting = "PANTALONES" aumentarCuenta={aumentarCuenta} cuenta={cuenta}/>}/>
-      <Route path="/category/:categoryid" element={<ItemListContainer greeting = "SHORTS" aumentarCuenta={aumentarCuenta} cuenta={cuenta}/>}/>
+      <Route path="/category/:categoryId" element={<ItemListContainer greeting = "Productos" aumentarCuenta={aumentarCuenta} cuenta={cuenta}/>}/>
+      <Route path="/detail/:id" element={<ItemDetailContainer/>}/>
       <Route path="/Registrarse" element={<Registrarse/>}/>
       <Route path="/Iniciar sesiòn" element={<IniciarSesion/>}/>
       <Route path="/Quienes Somos" element={<QuienesSomos/>}/>  
+      <Route path="*" element={<Err404/>}/>
     </Routes> 
     </NavBar>   
     </BrowserRouter>

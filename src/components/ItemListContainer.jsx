@@ -3,17 +3,40 @@ import "../scss/styles/base.scss";
 import ContainerFlechas from "./ContainerFlechas";
 import Titles from "./Titles";
 import CarruselAuto from "./CarruselAuto";
-import {useState } from "react";
-import productosData from "../assets/MOCK_DATA (1).json";
+import {useEffect, useState } from "react";
+import productosData from "../assets/MOCK_DATA (1).json"; 
 import ItemList from "./ItemList";
-import NavBar from "./NavBar";
+import { useParams } from "react-router-dom"
 
-export const ItemListContainer = ({ greeting, aumentarCuenta,cuenta,children }) => {
+
+
+export const ItemListContainer = ({ greeting, aumentarCuenta,children }) => {
   //Estado para mover el carrusel
   const [position, moverPotitionD] = useState({ left: 0 });
   //Estado para mover el carrusel
-   
 
+  //Promesa falsa
+
+  
+  //Promesa falsa
+
+  
+  //Estado para productos
+  const [productos,mostrarProductos] = useState([])
+  //Estado para productos
+  const {categoryId} = useParams()
+  //Effecto usado para filtrar los productos
+  useEffect(()=>{
+      let productosFiltrados = []
+      if(categoryId){
+       productosFiltrados = productosData.filter(f => f.category === categoryId)
+    }else{
+      productosFiltrados = productosData
+    }
+    mostrarProductos(productosFiltrados)
+  }, [categoryId])
+  //Effecto usado para filtrar los productos
+ 
   return (
     <main>   
       <div className="container-listItem">
@@ -32,7 +55,7 @@ export const ItemListContainer = ({ greeting, aumentarCuenta,cuenta,children }) 
           <ItemList
             position={position}
             className="container-items"
-            productosData={productosData}
+            productosData={productos}
             aumentarCuenta= {aumentarCuenta}
           >
           </ItemList>

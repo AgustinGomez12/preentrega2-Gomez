@@ -179,7 +179,11 @@
         margin: 20px;
         border-radius: 20px;
         position: relative;
-        
+        cursor: pointer;
+        &:hover{
+            zoom: 1.1;
+            box-shadow: 0 0 30px 20px green;
+        }
 
         h2{
             display: flex;
