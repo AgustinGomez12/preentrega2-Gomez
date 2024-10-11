@@ -180,9 +180,17 @@
         border-radius: 20px;
         position: relative;
         cursor: pointer;
+
         &:hover{
             zoom: 1.1;
             box-shadow: 0 0 30px 20px green;
+        }
+        
+        .link-detail{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
         }
 
         h2{

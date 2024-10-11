@@ -17,7 +17,7 @@ function App() {
     <Routes>
       <Route path="/" element={<ItemListContainer greeting = "INICIO" aumentarCuenta={aumentarCuenta} cuenta={cuenta}/>}/>
       <Route path="/category/:categoryId" element={<ItemListContainer greeting = "Productos" aumentarCuenta={aumentarCuenta} cuenta={cuenta}/>}/>
-      <Route path="/detail/:id" element={<ItemDetailContainer/>}/>
+      <Route path="/item/:id" element={<ItemDetailContainer/>}/>
       <Route path="/Registrarse" element={<Registrarse/>}/>
       <Route path="/Iniciar sesiòn" element={<IniciarSesion/>}/>
       <Route path="/Quienes Somos" element={<QuienesSomos/>}/>  
