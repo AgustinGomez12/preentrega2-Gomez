@@ -15,26 +15,48 @@ export const ItemListContainer = ({ greeting, aumentarCuenta,children }) => {
   const [position, moverPotitionD] = useState({ left: 0 });
   //Estado para mover el carrusel
 
-  //Promesa falsa
+//Promesa falsa
+  const promise = new Promise((resolve,resjet)=>{
+    if(productosData){
+       resolve("Se obtuvieron lod datos correctamente")
+    }else{
+        resjet("Error")
+    }
+})
+promise
+.then(resultado =>{
+    console.log(resultado)
+})
+.catch(err => {
+    console.error(err)
+})
 
-  
-  //Promesa falsa
+const [data, setData] = useState([])
+useEffect(()=>{
+const fetchData = () => {
+    const dataBase = productosData
+    setData(dataBase)
+}
+const demoraInternet = setTimeout(fetchData, 2000)
 
-  
+return () => clearTimeout(demoraInternet)
+},[])
+//Promesa falsa
+
   //Estado para productos
-  const [productos,mostrarProductos] = useState([])
+  const [productos,mostrarProductos] = useState(null)
   //Estado para productos
   const {categoryId} = useParams()
   //Effecto usado para filtrar los productos
-  useEffect(()=>{
-      let productosFiltrados = []
-      if(categoryId){
-       productosFiltrados = productosData.filter(f => f.category === categoryId)
+  useEffect (()=>{
+    let productosFiltrados = []
+    if(categoryId){
+      productosFiltrados = data.filter(f => f.category === categoryId)
     }else{
-      productosFiltrados = productosData
+      productosFiltrados = data
     }
-    mostrarProductos(productosFiltrados)
-  }, [categoryId])
+    productosFiltrados.length >2 && mostrarProductos(productosFiltrados)
+  },[categoryId])
   //Effecto usado para filtrar los productos
  
   return (
@@ -55,8 +77,8 @@ export const ItemListContainer = ({ greeting, aumentarCuenta,children }) => {
           <ItemList
             position={position}
             className="container-items"
-            productosData={productos}
-            aumentarCuenta= {aumentarCuenta}
+            data={productos || data}
+            aumentarCuenta = {aumentarCuenta}
           >
           </ItemList>
         </div>
