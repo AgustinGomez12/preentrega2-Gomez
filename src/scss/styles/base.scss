@@ -25,6 +25,26 @@
     }
 }
 
+@keyframes louder {
+    0%{
+        font-size: 100px;
+        color: lime;
+        text-shadow: 0 0 100px;
+    }
+
+    50%{
+        font-size: 150px;
+        color: limegreen;
+        text-shadow: 0px 0px 100px;
+    }
+
+    100%{
+        font-size: 100px;
+        color: aliceblue;
+        text-shadow: 0px 0px 100px;
+    }
+}
+
 @keyframes mover-carrusel {
     0%{
        transform: translate(0%);

@@ -13,59 +13,53 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
   const [position, moverPotitionD] = useState({ left: 0 });
   //Estado para mover el carrusel
 
-
-  //Promesa falsa
-  const promise = new Promise((resolve, resjet) => {
-    setTimeout(() => {
-      if (productosData) {
-        resolve("Se obtuvieron los datos correctamente");
-      } else {
-        resjet("Error");
-      }
-    },2000);
-  });
-  promise
-    .then((resultado) => {
-      setloding(true)
-      console.log(resultado);
-    })
-    .catch((err) => {
-      console.error(err);
-    })
-    
-
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const fetchData = () => {
-      const dataBase = productosData;
-      setData(dataBase);
-    };
-    const demoraInternet = setTimeout(fetchData, 2000);
-
-    return () => clearTimeout(demoraInternet);
-  }, []);
-  //Promesa falsa
+  //loding
+  const [loding, setloding] = useState(false)
+  //loding
 
   //Estado para productos
-  const [productos, mostrarProductos] = useState(null);
+  const [productos, mostrarProductos] = useState([]);
   //Estado para productos
+
+  //params
   const { categoryId } = useParams();
-  //Effecto usado para filtrar los productos
-  useEffect(() => {
-    let productosFiltrados = [];
-    if (categoryId) {
-      productosFiltrados = data.filter((f) => f.category === categoryId);
-    } else {
-      productosFiltrados = data;
-    }
-    productosFiltrados.length > 2 && mostrarProductos(productosFiltrados);
-  }, [categoryId]);
-  //Effecto usado para filtrar los productos
+  //params
 
-  return (
-   
-    <main>
-      <div className="container-listItem">
+  //Effecto usado para filtrar los productos
+  useEffect(()=>{
+  //Promesa falsa
+  const miPromesa = new Promise ((resolve,rejet)=>{
+   setTimeout(()=>{
+      if(productosData) {
+        resolve(productosData)
+      }else{
+        rejet("no se pudieron obtener los productos")
+      }
+      
+   }, 2000)
+  })
+  setloding(true)
+  miPromesa.then((productosCompletos=>{
+    setloding(false)
+    let productosFiltrados = []
+    if(categoryId){
+      productosFiltrados = productosCompletos.filter(f => f.category === categoryId)
+    }else {
+      productosFiltrados = productosCompletos
+    }
+    mostrarProductos(productosFiltrados)
+  }))
+  .catch(err => {
+    console.error(err)
+  }
+  )
+  //Promesa falsa
+  },[categoryId])
+
+  return ( loding ? (
+    <h2 className="louder">😪cargando😪</h2>
+  ) : (
+    <div className="container-listItem">
         <h2>{greeting}</h2>
         <h2>{children}</h2>
         <CarruselAuto></CarruselAuto>
@@ -77,15 +71,14 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
           <ContainerFlechas
             position={position}
             moverPotitionD={moverPotitionD}
-          />
+          />           
           <ItemList
             position={position}
             className="container-items"
-            data={productos || data}
             aumentarCuenta={aumentarCuenta}
-          ></ItemList>
+            productos={productos}
+          > 
+          </ItemList>
         </div>
-      </div>
-    </main>
-  );
-};
+      </div> )
+)}

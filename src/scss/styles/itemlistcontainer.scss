@@ -1,3 +1,18 @@
+.louder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 160vh;
+    font-size: 100px;
+    background: linear-gradient(90deg, violet, green, rgb(247, 4, 247), black);
+    background-size: 400% 400%;
+    animation: girar 10s ease-in-out infinite;
+    animation: louder 2s ease-in-out infinite;
+    position: absolute;
+    font-family:"Anton", sans-serif; 
+}
+
 .container-listItem {
     display: flex;
     align-items: center;

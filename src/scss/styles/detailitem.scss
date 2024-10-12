@@ -1,0 +1,59 @@
+.main-detail {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 160vh;
+    background: linear-gradient(90deg, violet, green, rgb(247, 4, 247), black);
+    background-size: 400% 400%;
+    animation: girar 10s ease-in-out infinite;
+    align-items: center;
+    .productoDetallado{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 600px;
+        height: 800px;
+        background: linear-gradient(360deg,lime,black,green);
+        padding: 30px;
+        border-radius: 30px;
+        gap: 20px;
+        img{
+            border-radius: 30px;
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(360deg,rgba(0, 255, 0, 0.603),rgba(0, 0, 0, 0.781),rgba(0, 255, 0, 0.534));
+        }
+        h2{
+            font-family: "Anton", sans-serif;
+            color: aliceblue;
+            font-size: 50px;
+        }
+
+        p{
+            font-family: "Anton", sans-serif;
+            color: aliceblue;
+            font-size: 30px;
+        }
+
+        button{
+            width: 200px;
+            height: 50px;
+            font-family:"Anton", sans-serif;
+            font-size: 30px;
+            border-radius: 20px;
+            border: none;
+            background: linear-gradient(90deg,rgba(0, 255, 0, 0.63),rgba(0, 128, 0, 0.836),rgba(0, 255, 0, 0.726));
+            cursor: pointer;
+            color: aliceblue;
+            box-shadow: 0 0 10px 10px green;
+            &:hover{
+                zoom: 1.1;
+                box-shadow: 0 0 10px 10px black;
+                color: black;
+                text-shadow: 0 0 10px lawngreen;
+            }
+        }
+        
+    }
+}

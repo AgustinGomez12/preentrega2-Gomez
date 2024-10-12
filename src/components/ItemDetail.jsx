@@ -1,8 +1,13 @@
 import React from 'react'
 
-const ItemDetail = () => {
+const ItemDetail = ({ producto }) => {
   return (
-    <div>ItemDetail</div>
+    <div className='productoDetallado'>
+      <img src={producto.imagenrepre} alt="" />
+      <h2>{producto.titulo}</h2>
+      <p>{producto.precio}</p>
+      <button>Comprar</button>
+    </div>
   )
 }
 
