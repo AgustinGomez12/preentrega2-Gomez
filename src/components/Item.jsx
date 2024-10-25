@@ -11,9 +11,10 @@ const Item = ({ item, aumentarCuenta }) => {
       <Link to={`/item/${item.id}`} className="link-detail">
         <h2>{item.titulo}</h2>
         <figure>
-          <img src={item.imagenrepre} alt="" />
+           <img src={item.image} alt="" />
         </figure>
-        <p>{item.precio}</p>
+        <p>$ {item.precio}</p>
+        <p>Stock disponible {item.stock}</p>
       </Link>
       <button onClick={añadirAlcarrito}>Añadir al carrito</button>
     </div>

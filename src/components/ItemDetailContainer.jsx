@@ -18,7 +18,18 @@ const ItemDetailContainer = () => {
 
   //Effect para renderizar product
   useEffect(()=>{
-    //Promesa falsa
+    
+    },[id])
+   //Effect para renderizar product
+  
+  return (loding ? <h2 className='louder'>😪cargando😪</h2> : producto && <main className='main-detail'><ItemDetail producto={producto}/></main>)
+    
+  
+}
+
+export default ItemDetailContainer
+
+/*//Promesa falsa
     const miPromesa = new Promise ((resolve,rejet)=>{
      setTimeout(()=>{
         if(productosData) {
@@ -44,13 +55,4 @@ const ItemDetailContainer = () => {
       console.error(err)
     }
     )
-    //Promesa falsa
-    },[id])
-   //Effect para renderizar product
-  
-  return (loding ? <h2 className='louder'>😪cargando😪</h2> : producto && <main className='main-detail'><ItemDetail producto={producto}/></main>)
-    
-  
-}
-
-export default ItemDetailContainer
+    //Promesa falsa*/ 

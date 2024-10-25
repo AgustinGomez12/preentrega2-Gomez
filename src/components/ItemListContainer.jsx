@@ -4,7 +4,8 @@ import ContainerFlechas from "./ContainerFlechas";
 import Titles from "./Titles";
 import CarruselAuto from "./CarruselAuto";
 import { useEffect, useState } from "react";
-import productosData from "../assets/MOCK_DATA (1).json";
+import { collection,query,where,getDocs, doc } from "firebase/firestore";
+import { db } from "../Firebase/config";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 
@@ -27,33 +28,31 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
 
   //Effecto usado para filtrar los productos
   useEffect(()=>{
-  //Promesa falsa
-  const miPromesa = new Promise ((resolve,rejet)=>{
-   setTimeout(()=>{
-      if(productosData) {
-        resolve(productosData)
+   (async () => {
+    try {
+      setloding(true)
+      let productosFiltrados = []
+      if(categoryId){
+        const q = query(collection(db,"products"),where("category","==", categoryId));
+        const querySnapshots = await getDocs(q);
+        querySnapshots.forEach((doc) => {
+          console.log(doc.id, "=>", doc.data());
+          productosFiltrados.push({id: doc.id, ...doc.data()})
+        })
+        setloding(false)
       }else{
-        rejet("no se pudieron obtener los productos")
+       const querySnapshots = await getDocs(collection(db,"products"));
+       querySnapshots.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        productosFiltrados.push({id: doc.id, ...doc.data()})
+       });
+       setloding(false)
       }
-      
-   }, 2000)
-  })
-  setloding(true)
-  miPromesa.then((productosCompletos=>{
-    setloding(false)
-    let productosFiltrados = []
-    if(categoryId){
-      productosFiltrados = productosCompletos.filter(f => f.category === categoryId)
-    }else {
-      productosFiltrados = productosCompletos
+      mostrarProductos(productosFiltrados)
+    } catch (error) {
+      console.log(error)
     }
-    mostrarProductos(productosFiltrados)
-  }))
-  .catch(err => {
-    console.error(err)
-  }
-  )
-  //Promesa falsa
+   })()
   },[categoryId])
 
   return ( loding ? (
@@ -82,3 +81,32 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
         </div>
       </div> )
 )}
+
+
+//Promesa falsa
+  /*const miPromesa = new Promise ((resolve,rejet)=>{
+   setTimeout(()=>{
+      if(productosData) {
+        resolve(productosData)
+      }else{
+        rejet("no se pudieron obtener los productos")
+      }
+      
+   }, 2000)
+  })
+  setloding(true)
+  miPromesa.then((productosCompletos=>{
+    setloding(false)
+    let productosFiltrados = []
+    if(categoryId){
+      productosFiltrados = productosCompletos.filter(f => f.category === categoryId)
+    }else {
+      productosFiltrados = productosCompletos
+    }
+    mostrarProductos(productosFiltrados)
+  }))
+  .catch(err => {
+    console.error(err)
+  }
+  )
+  //Promesa falsa*/
