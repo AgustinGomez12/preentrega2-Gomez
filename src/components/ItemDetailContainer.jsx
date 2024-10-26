@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
-import productosData from "../assets/MOCK_DATA (1).json";
 import { useParams } from 'react-router-dom'
 import "../scss/styles/detailitem.scss"
+import { db } from '../Firebase/config';
+import { doc,getDoc } from 'firebase/firestore';
 const ItemDetailContainer = () => {
   //Estado para setear productos
-  const [producto, mostrarProducto] = useState(null)
+  const [producto, mostrarProducto] = useState([])
   //Estado para setear productos
   
    //loding
@@ -18,7 +19,24 @@ const ItemDetailContainer = () => {
 
   //Effect para renderizar product
   useEffect(()=>{
-    
+    ;(async () => {
+      setloding(true)
+     try {
+      const docRef = doc(db, "products", id);
+      const docSnap = await getDoc(docRef);
+
+      if(docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        mostrarProducto({...docSnap.data(), id})
+      }else {
+        console.log("No such document!")
+      }
+      setloding(false)
+     } catch (error) {
+      console.log(error)
+     }
+    })
+    ()
     },[id])
    //Effect para renderizar product
   
@@ -29,30 +47,3 @@ const ItemDetailContainer = () => {
 
 export default ItemDetailContainer
 
-/*//Promesa falsa
-    const miPromesa = new Promise ((resolve,rejet)=>{
-     setTimeout(()=>{
-        if(productosData) {
-          resolve(productosData)
-        }else{
-          rejet("no se pudieron obtener los productos")
-        }
-        
-     }, 2000)
-    })
-    setloding(true)
-    miPromesa.then((productosCompletos=>{
-      setloding(false)   
-      let productosFiltrados = []
-      if(id){
-        productosFiltrados = productosCompletos.find(f => f.id === Number(id))
-      }else {
-        productosFiltrados = productosCompletos
-      }
-      mostrarProducto(productosFiltrados)
-    }))
-    .catch(err => {
-      console.error(err)
-    }
-    )
-    //Promesa falsa*/ 

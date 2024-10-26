@@ -11,9 +11,9 @@ import { useParams } from "react-router-dom";
 
 export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
   //Estado para mover el carrusel
-  const [position, moverPotitionD] = useState({ left: 0 });
-  //Estado para mover el carrusel
-
+ const [position, moverPotitionD] = useState({ left: 0 });
+   //Estado para mover el carrusel
+  
   //loding
   const [loding, setloding] = useState(false)
   //loding
@@ -26,6 +26,7 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
   const { categoryId } = useParams();
   //params
 
+ 
   //Effecto usado para filtrar los productos
   useEffect(()=>{
    (async () => {
@@ -68,6 +69,7 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
         </Titles>
         <div className="items-varios">
           <ContainerFlechas
+            categoryId={categoryId}
             position={position}
             moverPotitionD={moverPotitionD}
           />           

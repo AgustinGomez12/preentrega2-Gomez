@@ -12,12 +12,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 600px;
-        height: 800px;
+        width: 800px;
+        height: 1200px;
         background: linear-gradient(360deg,lime,black,green);
         padding: 30px;
         border-radius: 30px;
-        gap: 20px;
+        gap: 25px;
+        
         img{
             border-radius: 30px;
             width: 100%;
