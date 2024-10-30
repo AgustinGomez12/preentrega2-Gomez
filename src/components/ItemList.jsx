@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Item from './Item'
 //Promesa false
 const ItemList = ({productos,aumentarCuenta,position}) => {  

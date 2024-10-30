@@ -1,11 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { NavLink,} from "react-router-dom";
 import imgenLogo from "../assets/logo-fowards.png";
 import "../scss/styles/base.scss";
 import "../scss/styles/navbar.scss";
 import "../scss/styles/linksstyle.scss";
 import { CartWidget } from "./CartWidget";
+import { useContext } from "react";
+import { movimientoCarrusel } from "../context/LogicaCarrusel";
 
 const NavBar = ({ cuenta, children }) => {
+  
+  //Context
+  const {position, moverPotitionD} = useContext(movimientoCarrusel)
+  //Context
+
+  //Funcion para "refrescar" el carrusel general
+  const refrescarCarrusel = () => {
+    moverPotitionD({
+      left: position.left === 0
+
+    }) 
+  }
+  //Funcion para "refrescar" el carrusel general
+
   return (
     <header>
       {children}
@@ -20,7 +36,7 @@ const NavBar = ({ cuenta, children }) => {
         <div className="container-links">
           <ul>
             <li>
-              <NavLink
+              <NavLink onClick={refrescarCarrusel}
                 className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
                 }}
@@ -30,21 +46,21 @@ const NavBar = ({ cuenta, children }) => {
               </NavLink>
             </li>
             <li>
-              <NavLink className={({ isActive }) => {
+              <NavLink onClick={refrescarCarrusel} className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
                 }} to={`/category/Remeras`}>
                 Remeras
               </NavLink>
             </li>
             <li>
-              <NavLink className={({ isActive }) => {
+              <NavLink onClick={refrescarCarrusel} className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
                 }} to={`/category/Pantalones`}>
                 Pantalones
               </NavLink>
             </li>
             <li>
-              <NavLink className={({ isActive }) => {
+              <NavLink onClick={refrescarCarrusel} className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";
                 }} to={`/category/Shorts`}>
                 Shorts

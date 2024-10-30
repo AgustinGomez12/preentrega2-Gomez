@@ -3,16 +3,18 @@ import "../scss/styles/base.scss";
 import ContainerFlechas from "./ContainerFlechas";
 import Titles from "./Titles";
 import CarruselAuto from "./CarruselAuto";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { collection,query,where,getDocs, doc } from "firebase/firestore";
 import { db } from "../Firebase/config";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import { movimientoCarrusel } from "../context/LogicaCarrusel";
 
 export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
-  //Estado para mover el carrusel
- const [position, moverPotitionD] = useState({ left: 0 });
-   //Estado para mover el carrusel
+  
+  //Context para mover carrito
+  const {position} = useContext(movimientoCarrusel) 
+  //Context para mover carrito
   
   //loding
   const [loding, setloding] = useState(false)
@@ -69,15 +71,12 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
         </Titles>
         <div className="items-varios">
           <ContainerFlechas
-            categoryId={categoryId}
-            position={position}
-            moverPotitionD={moverPotitionD}
           />           
           <ItemList
-            position={position}
             className="container-items"
             aumentarCuenta={aumentarCuenta}
             productos={productos}
+            position={position}
           > 
           </ItemList>
         </div>
