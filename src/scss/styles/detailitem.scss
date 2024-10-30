@@ -19,6 +19,29 @@
         border-radius: 30px;
         gap: 25px;
         
+        h3 {
+            font-family:"Anton", sans-serif ;
+            color: aliceblue;
+            font-size: 30px;
+        }
+
+        .container-botonesCuenta{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 30px;
+            
+         span {
+            font-size: 30px;
+            font-family: "Anton", sans-serif;
+            color: aliceblue;
+         }
+
+         button {
+            width: 50px;
+         }
+        }
+
         img{
             border-radius: 30px;
             width: 100%;

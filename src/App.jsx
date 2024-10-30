@@ -8,18 +8,20 @@ import QuienesSomos from "./subCoponents/QuienesSomos"
 import NavBar from "./components/NavBar"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import LogicaCarrusel from "./context/LogicaCarrusel"
+import CartProvider from "./context/CartProvider"
 
 
 function App() {
-  const [cuenta,aumentarCuenta] = useState(0)
+  
  
   return (
     <BrowserRouter>
+    <CartProvider>
     <LogicaCarrusel>
-    <NavBar cuenta={cuenta}>
+    <NavBar>
     <Routes>
-      <Route path="/" element={<ItemListContainer greeting = "INICIO" aumentarCuenta={aumentarCuenta} cuenta={cuenta}/>}/>
-      <Route path="/category/:categoryId" element={<ItemListContainer greeting = "Productos" aumentarCuenta={aumentarCuenta} cuenta={cuenta}/>}/>
+      <Route path="/" element={<ItemListContainer greeting = "INICIO"/>}/>
+      <Route path="/category/:categoryId" element={<ItemListContainer greeting = "Productos" />}/>
       <Route path="/item/:id" element={<ItemDetailContainer/>}/>
       <Route path="/Registrarse" element={<Registrarse/>}/>
       <Route path="/Iniciar sesiòn" element={<IniciarSesion/>}/>
@@ -28,6 +30,7 @@ function App() {
     </Routes>
     </NavBar>   
      </LogicaCarrusel>
+     </CartProvider>
     </BrowserRouter>
   )
 }
