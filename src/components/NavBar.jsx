@@ -1,4 +1,4 @@
-import { NavLink,} from "react-router-dom";
+import { Link, NavLink,} from "react-router-dom";
 import imgenLogo from "../assets/logo-fowards.png";
 import "../scss/styles/base.scss";
 import "../scss/styles/navbar.scss";
@@ -31,7 +31,7 @@ const NavBar = ({ cuenta, children }) => {
           <h1>Fowards</h1>
         </div>
         <div className="container-estructuraCarYSpan">
-          <CartWidget cuenta={cuenta} />
+          <Link to={"/Cart"}><CartWidget cuenta={cuenta} /></Link>
         </div>
         <div className="container-links">
           <ul>

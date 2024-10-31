@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import LogicaCarrusel from "./context/LogicaCarrusel"
 import CartProvider from "./context/CartProvider"
+import Cart from "./components/Cart"
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route path="/" element={<ItemListContainer greeting = "INICIO"/>}/>
       <Route path="/category/:categoryId" element={<ItemListContainer greeting = "Productos" />}/>
       <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+      <Route path="/Cart" element={<Cart/>}/>
       <Route path="/Registrarse" element={<Registrarse/>}/>
       <Route path="/Iniciar sesiòn" element={<IniciarSesion/>}/>
       <Route path="/Quienes Somos" element={<QuienesSomos/>}/>  

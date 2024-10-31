@@ -14,7 +14,7 @@ const ItemCount = ({producto, count, setCount}) => {
   }
 
   const restar = () => {
-    if(count === 0){
+    if(count === 1){
 
     }else{
     setCount(count => count - 1)

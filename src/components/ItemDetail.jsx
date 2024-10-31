@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Cart } from "../context/CartProvider";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ producto }) => {
   //Funcion para añadir al carrito con context
@@ -10,7 +11,7 @@ const ItemDetail = ({ producto }) => {
 
   
   //Estado para definir la cantidad que se requiere comprar
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(1)
   //Estado para definir la cantidad que se requiere comprar
 
 
@@ -42,7 +43,7 @@ const ItemDetail = ({ producto }) => {
         perspiciatis exercitationem delectus ipsam corporis corrupti aliquid
         tempore praesentium molestias nobis tenetur eaque!
       </p>
-      {visibility ? <button onClick={handleCart}>Añadir al carrito</button> : <button>Vamos al carrito</button>}
+      {visibility ? <button onClick={handleCart}>Añadir al carrito</button> : <Link to={"/Cart"}><button>Finalizar compra</button></Link>}
     </div>
   );
 };
