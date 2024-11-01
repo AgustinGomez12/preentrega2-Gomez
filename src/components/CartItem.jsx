@@ -1,13 +1,8 @@
 import React from "react";
-import { useState } from "react";
 
 
-
-const CartItem = ({ item,eliminarItem }) => {  
+const CartItem = ({ item, eliminarItem }) => {
   
-
-  
-
   return (
     <div className="itemDentroDelCart">
       <div>
@@ -21,7 +16,7 @@ const CartItem = ({ item,eliminarItem }) => {
         Voluptatem quos ipsam possimus, dolorum ad necessitatibus aliquam ut.
       </p>
       <p>Cantidad:{item.quantity}</p>
-      <button onClick={()=>eliminarItem(item.id) }>Eliminar producto</button>
+      <button onClick={() => eliminarItem(item.id)}>Eliminar producto</button>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
  
+  
 
   return (
     <div className="item">
@@ -13,7 +14,7 @@ const Item = ({ item }) => {
         <p>$ {item.precio}</p>
         <p>Stock disponible {item.stock}</p>
       </div>
-     <Link to={`/item/${item.id}`}><button >Detail</button></Link> 
+     <Link to={`/item/${item.id}`}><button >Mas info</button></Link> 
     </div>
   );
 };

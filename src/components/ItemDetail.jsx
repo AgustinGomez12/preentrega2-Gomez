@@ -8,8 +8,6 @@ const ItemDetail = ({ producto }) => {
   const {addCart} = useContext(Cart)
   //Funcion para añadir al carrito con context
 
-
-  
   //Estado para definir la cantidad que se requiere comprar
   const [count, setCount] = useState(1)
   //Estado para definir la cantidad que se requiere comprar
@@ -29,6 +27,8 @@ const ItemDetail = ({ producto }) => {
     
   }
   //Funcion para añadir al carrito el determinado Item
+
+ 
 
   return (
     <div className="productoDetallado">
