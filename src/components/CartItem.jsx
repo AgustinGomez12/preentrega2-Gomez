@@ -2,6 +2,8 @@ import React from "react";
 
 
 const CartItem = ({ item, eliminarItem }) => {
+
+  //Renderizado de mi item dentro del carrito
   
   return (
     <div className="itemDentroDelCart">

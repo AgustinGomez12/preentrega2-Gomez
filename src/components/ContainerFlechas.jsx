@@ -6,12 +6,13 @@ import { useParams } from "react-router-dom";
 
 
 const ContainerFlechas = ({children}) => {
-  //Context
+  //Context de la posicion del carrusel
   const {position,moverPotitionD} = useContext(movimientoCarrusel)
-  //Context
+  //Context de la posicion del carrusel
 
-  //Params
+  //Params para que el carrusel tenga un limite segun la categoria
   const { categoryId } = useParams()
+  //Params para que el carrusel tenga un limite segun la categoria
 
     //Mover carrusel derecha
     const moverDer = () => {

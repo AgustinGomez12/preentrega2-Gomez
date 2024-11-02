@@ -37,6 +37,3 @@ function App() {
 
 export default App
 
-
-//<NavBar cuenta={cuenta}/>
-    //<ItemListContainer greeting = "INICIO" aumentarCuenta={aumentarCuenta}/>

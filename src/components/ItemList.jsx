@@ -1,6 +1,7 @@
 import Item from './Item'
-//Promesa false
 const ItemList = ({productos,aumentarCuenta,position}) => {  
+
+//Mapeado de mi item
 
 return (   
    <div className='container-items' style={{potition:"relative",left: `${position.left}px`, right: `${position.right}px`}}>    

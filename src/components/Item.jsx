@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
  
+  //Armado de mi item
   
-
   return (
     <div className="item">
       <div  className="link-detail">

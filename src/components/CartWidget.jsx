@@ -3,7 +3,9 @@ import carrito from "../assets/shopping-cart-svgrepo-com.svg";
 import { Cart } from "../context/CartProvider";
 export const CartWidget = () => {
   
+  //Context para mostrar las cantidades del carrito
   const {totalQuantity} = useContext(Cart)
+  //Context para mostrar las cantidades del carrito
 
   
   return (

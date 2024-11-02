@@ -55,7 +55,7 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
     }
    })()
   },[categoryId])
-
+  //Effecto usado para filtrar los productos
   return ( loding ? (
     <h2 className="louder">😪cargando😪</h2>
   ) : (
