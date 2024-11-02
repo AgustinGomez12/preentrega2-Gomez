@@ -39,14 +39,12 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
         const q = query(collection(db,"products"),where("category","==", categoryId));
         const querySnapshots = await getDocs(q);
         querySnapshots.forEach((doc) => {
-          console.log(doc.id, "=>", doc.data());
           productosFiltrados.push({id: doc.id, ...doc.data()})
         })
         setloding(false)
       }else{
        const querySnapshots = await getDocs(collection(db,"products"));
        querySnapshots.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
         productosFiltrados.push({id: doc.id, ...doc.data()})
        });
        setloding(false)
@@ -84,30 +82,3 @@ export const ItemListContainer = ({ greeting, aumentarCuenta, children }) => {
 )}
 
 
-//Promesa falsa
-  /*const miPromesa = new Promise ((resolve,rejet)=>{
-   setTimeout(()=>{
-      if(productosData) {
-        resolve(productosData)
-      }else{
-        rejet("no se pudieron obtener los productos")
-      }
-      
-   }, 2000)
-  })
-  setloding(true)
-  miPromesa.then((productosCompletos=>{
-    setloding(false)
-    let productosFiltrados = []
-    if(categoryId){
-      productosFiltrados = productosCompletos.filter(f => f.category === categoryId)
-    }else {
-      productosFiltrados = productosCompletos
-    }
-    mostrarProductos(productosFiltrados)
-  }))
-  .catch(err => {
-    console.error(err)
-  }
-  )
-  //Promesa falsa*/

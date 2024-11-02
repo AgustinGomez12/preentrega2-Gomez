@@ -1,17 +1,26 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import '../scss/styles/cart.scss'
 import { Cart as CartContext } from '../context/CartProvider'
 import CartItem from './CartItem'
+import Modal from './Modal'
+
+
+
 const Cart = () => {
   const {cart,setCart,totalPrice} = useContext(CartContext)
-  
+
   const eliminarItem = (id) => {
     const nuevosItems = cart.filter(item => item.id !== id)
     setCart(nuevosItems)
   }
  
-  
+ const [modal,setModal] = useState(false)
+ 
+ const appearModal = () => {
+  setModal(!modal)
+ }
 
+  
   return (
     <main className='mainCart'>
         <h3>Carrito</h3>
@@ -35,7 +44,11 @@ const Cart = () => {
         }
       
       {
-        cart.length ? <div className='totalDinero'><h2>El total es : {totalPrice}</h2> <button>Continuar compra</button></div> : <div></div>
+        cart.length ? <div className='totalDinero'><h2>El total es : {totalPrice}</h2> <button onClick={appearModal}>Continuar compra</button></div> : <div></div>
+      }
+
+      {
+        modal && <Modal  modal={modal} setModal={setModal} cart={cart} totalPrice={totalPrice}/>
       }
         
     </main>

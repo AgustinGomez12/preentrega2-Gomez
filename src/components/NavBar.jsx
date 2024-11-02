@@ -65,21 +65,7 @@ const NavBar = ({ cuenta, children }) => {
                 }} to={`/category/Shorts`}>
                 Shorts
               </NavLink>
-            </li>
-            <li>
-              <NavLink className={({ isActive }) => {
-                 return isActive ? "links" : "linksNoactivo";
-                }} to={"/Registrarse"}>
-                Registrarse
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className={({ isActive }) => {
-                 return isActive ? "links" : "linksNoactivo";
-                }} to={"/Iniciar sesiòn"}>
-                iniciar sesión
-              </NavLink>
-            </li>
+           </li>
             <li>
               <NavLink className={({ isActive }) => {
                  return isActive ? "links" : "linksNoactivo";

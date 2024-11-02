@@ -13,6 +13,10 @@ const ItemDetailContainer = () => {
    const [loding, setloding] = useState(false)
    //loding
 
+   // Estado para manejar errores 
+   const [error, setError] = useState(null);
+   // Estado para manejar errores 
+
   //params
   const { id } = useParams()
   //params
@@ -26,22 +30,23 @@ const ItemDetailContainer = () => {
       const docSnap = await getDoc(docRef);
 
       if(docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
         mostrarProducto({...docSnap.data(), id})
       }else {
-        console.log("No such document!")
+        setError("No se encotro el producto")
       }
       setloding(false)
      } catch (error) {
-      console.log(error)
+      setError("No se encotro el producto")
      }
+     
     })
     ()
     },[id])
    //Effect para renderizar product
   
-  return (loding ? <h2 className='louder'>😪cargando😪</h2> : producto && <main className='main-detail'><ItemDetail producto={producto}/></main>)
-    
+  return (error ? <h2 className='errorProduct'>💀Error producto no encontado💀</h2> : loding ? <h2 className='louder'>😪cargando😪</h2> : producto && <main className='main-detail'><ItemDetail producto={producto}/></main>  ) 
+  
+ 
   
 }
 

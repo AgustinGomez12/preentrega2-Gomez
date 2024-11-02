@@ -52,7 +52,7 @@ export const CartProvider = ({ children }) => {
     const total = updatedCart.reduce((acc, product) => acc + (product.precio * product.quantity), 0);
     setTotalPrice(total)
   }
-  console.log(totalPrice)
+  
   //Actualiza las cantidades totales en la inicialización
   useEffect(()=>{
   verQuantity(cart);
@@ -60,7 +60,7 @@ export const CartProvider = ({ children }) => {
   },[cart])
   //Actualiza las cantidades totales en la inicialización
 
-  console.log(totalPrice)
+  
   return (
     <Cart.Provider
       value={{ cart, addCart,totalQuantity,setCart,totalPrice}}
