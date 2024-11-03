@@ -38,17 +38,18 @@ const Modal = ({ modal, setModal, cart , eliminarItem }) => {
   };
  //Funcion para prevenir el envio del form y validar los inputs de email 
 
- //Efecto usado para que el boton no aparezca almenos que el usuario llene el form
+ //Effecto usado para que el boton no aparezca almenos que el usuario llene el form
   useEffect(() => {
     const isFormFilled = Object.values(formUser).every((field) => field !== "");
     setFormValid(isFormFilled);
   }, [formUser]);
- //Efecto usado para que el boton no aparezca almenos que el usuario llene el form
+ //Effecto usado para que el boton no aparezca almenos que el usuario llene el form
   return (
     <div className="containerModal">
       <div className="modal">
         <p onClick={closeModal}>X</p>
-        <h2>Copleta los datos para finalizar la compra</h2>
+        <h2>La compra solo puede finalizarse si se llenan los campos, completalos y veras el boton 🧐</h2>
+        <h2>En caso de arrepetimiento preciona la ❌</h2>
 
         <form onSubmit={handleSubmit}>
           <input onChange={handleChange} name="nombre" type="text" value={formUser.nombre}  placeholder="Nombre" />

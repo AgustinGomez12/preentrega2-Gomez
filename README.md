@@ -1,8 +1,19 @@
 ## Resumen y explicacion del proyecto
 
-# Preentrega 2 todo lo que se añadio:
-Se añadio un carrusel con flechas que le falta un poco de mejor logica para que no se vaya fuera de los productos. Mas adelante lo hare por que me enfoque mas en la entrega, ademas se enruto todo como lo estipula la consigna. El carrusel automatico es completamente decorativo sus botones aun no funcionan, ademas le conecte la cuenta al carrito con los productos.La carpeta subComponents tiene componentes que tienen otras fucionalidades que no se requieren en la entrega.
+# Preentrega 3 todo lo que se añadio:
+1- Mejora de la logica de las flechas del carrito.
+
+2- Se borro todo lo relacionado con la mockData y se impleto firebase al completo.
+
+3-Se renderizo un item detail con el control sobre la quantity y el stock.
+
+4-Se añadio un carrito completamente funcional que muestra los itemes de la compra el precio, el boton para continuar con la compra, el boton para la eliminacion de producto y todo esto es copletamente funcional.
+
+5-Se añadio un modal en el cual hay que rellenar todos los campos para poder cuntinuar con la compra, (PARA QUE EL BOTON APAREZCA ES NECESARIO LLENAR LOS CAMPOS). Una vez llenos los campos y que se preciona el boton la orden es generada y se renderiza ⬇.
+
+6-Por ultimo se añadio un modal extra que muestra todos los datos necesarios de la compra y 
+finaliza la compra borrado todo el contenido del carrito.
 
 # ¿De que se trata?
- Es una tienda de ropa, me inspire de la plataforma de  coder para realizar el menu navbar, por eso este se encuentra en el costado y no arriba como un navbar normal.
+ Es una tienda de ropa, me inspire de la plataforma de coder para realizar el menu navbar, por eso este se encuentra en el costado y no arriba como un navbar normal. Tiene un control completo del flujo de la compra.
 
