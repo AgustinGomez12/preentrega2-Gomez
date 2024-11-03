@@ -14,6 +14,8 @@
 6-Por ultimo se añadio un modal extra que muestra todos los datos necesarios de la compra y 
 finaliza la compra borrado todo el contenido del carrito.
 
+## (ACLARACION POR LA DUDAS: AL FINALIZAR LA COMPRA PUEDE SER NECESARIO ESPERA UNOS SEGUNDOS PARA EL CORRECTO REDERIZADO DE LA ORDEN.)
+
 # ¿De que se trata?
  Es una tienda de ropa, me inspire de la plataforma de coder para realizar el menu navbar, por eso este se encuentra en el costado y no arriba como un navbar normal. Tiene un control completo del flujo de la compra.
 
