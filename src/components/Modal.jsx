@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import endPurChase from "../services/endPurchase";
 import { datosDelUsuario } from "../context/DatosUsuarioProvider";
+import ModalConfirmation from "./ModalConfirmation";
 
-const Modal = ({ modal, setModal, cart }) => {
+const Modal = ({ modal, setModal, cart , eliminarItem }) => {
   //Contexto para funcionamiento del form
   const { formUser, setFormUser } = useContext(datosDelUsuario);
   //Contexto para funcionamiento del form
@@ -10,6 +11,9 @@ const Modal = ({ modal, setModal, cart }) => {
   //Estado para validar el form
   const [formValid, setFormValid] = useState(false);
   //Estado para validar el form
+
+  //Estado modal oreden generada
+  const [modalOrder,setModalOreder] = useState(false)
 
   //Funcion para cerrar el modal
   const closeModal = () => {
@@ -42,7 +46,7 @@ const Modal = ({ modal, setModal, cart }) => {
  //Efecto usado para que el boton no aparezca almenos que el usuario llene el form
   return (
     <div className="containerModal">
-      <div>
+      <div className="modal">
         <p onClick={closeModal}>X</p>
         <h2>Copleta los datos para finalizar la compra</h2>
 
@@ -53,11 +57,16 @@ const Modal = ({ modal, setModal, cart }) => {
           <input onChange={handleChange} name="email" type="email" value={formUser.email} placeholder="Email" />
           <input onChange={handleChange} name="confirmarEmail" type="email" value={formUser.confirmarEmail} placeholder="ConfirmarEmail" />
           {
-            formValid && (<button onClick={() => endPurChase(cart,formUser)}>Confirma compra</button>)
+            formValid && (<button onClick={() => endPurChase(cart,formUser,setModalOreder(true))}>Confirmar compra</button>)
           }
-          
+       
         </form>
+
+
       </div>
+         {
+          modalOrder && (<ModalConfirmation setModalOreder={setModalOreder} closeModal={closeModal} eliminarItem={eliminarItem}/>)
+          }
     </div>
   );
 };

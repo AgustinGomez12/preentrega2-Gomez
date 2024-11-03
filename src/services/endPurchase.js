@@ -1,7 +1,6 @@
-import { addDoc, collection, doc, or, runTransaction, serverTimestamp, Timestamp, Transaction } from "firebase/firestore";
+import { addDoc, collection, doc, or, runTransaction, serverTimestamp} from "firebase/firestore";
 import { db } from "../Firebase/config";
-import { useContext } from "react";
-import { datosDelUsuario } from "../context/DatosUsuarioProvider";
+
 
 
 const endPurChase = async (cart,formUser) => {

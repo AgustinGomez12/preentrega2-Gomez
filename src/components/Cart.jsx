@@ -10,8 +10,9 @@ const Cart = () => {
   //Contextos para correcto funcionamiento del cart
 
   //Funcion para eliminar item del cart
+ 
   const eliminarItem = (id) => {
-    const nuevosItems = cart.filter((item) => item.id !== id);
+    const nuevosItems = cart.filter((item) => item.id !== id); 
     setCart(nuevosItems);
   };
   //Funcion para eliminar item del cart
@@ -58,7 +59,7 @@ const Cart = () => {
 
       {cart.length ? (
         <div className="totalDinero">
-          <h2>El total es : {totalPrice}</h2>{" "}
+          <h2>El total es : $ {totalPrice}</h2>{" "}
           <button onClick={appearModal}>Continuar compra</button>
         </div>
       ) : (
@@ -67,6 +68,7 @@ const Cart = () => {
 
       {modal && (
         <Modal
+          eliminarItem={eliminarItem}
           modal={modal}
           setModal={setModal}
           cart={cart}

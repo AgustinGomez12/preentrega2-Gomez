@@ -12,7 +12,7 @@ const CartItem = ({ item, eliminarItem }) => {
         <h2>{item.titulo}</h2>
       </div>
 
-      <p>Precio:{item.precio}</p>
+      <p>Precio:${item.precio}</p>
       <p>
         Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         Voluptatem quos ipsam possimus, dolorum ad necessitatibus aliquam ut.

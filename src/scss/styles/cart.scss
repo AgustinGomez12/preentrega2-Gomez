@@ -1,4 +1,4 @@
-.mainCart{
+.mainCart {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -13,23 +13,23 @@
     gap: 40px;
     overflow: scroll;
     scrollbar-width: none;
-    
-    .totalDinero{
+
+    .totalDinero {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 30px;
         width: 300px;
         height: 200px;
-        background: linear-gradient(90deg,lime,green,lime);
+        background: linear-gradient(90deg, lime, green, lime);
         position: fixed;
         bottom: 30px;
         right: 30px;
         border-radius: 30px;
 
-        h2{
+        h2 {
             font-size: 30px;
-            font-family:"Anton", sans-serif ;
+            font-family: "Anton", sans-serif;
             color: aliceblue;
             padding: 10px;
         }
@@ -41,40 +41,41 @@
             border-radius: 20px;
             border: none;
             cursor: pointer;
-            font-family:"Anton", sans-serif ;
-            background: linear-gradient(90deg,lime,violet,lime);
+            font-family: "Anton", sans-serif;
+            background: linear-gradient(90deg, lime, violet, lime);
+
             &:hover {
-                background: linear-gradient(90deg,lime,green,lime);
+                background: linear-gradient(90deg, lime, green, lime);
                 box-shadow: 0 0 10px 10px;
             }
         }
     }
 
     h3 {
-      font-family:"Anton", sans-serif ;  
-      color: aliceblue;
-      font-size: 50px;
-      margin-top: 20px;
+        font-family: "Anton", sans-serif;
+        color: aliceblue;
+        font-size: 50px;
+        margin-top: 20px;
     }
-    
-   
 
 
-    .itemDentroDelCart{
+
+
+    .itemDentroDelCart {
         display: flex;
-        width:85%;
+        width: 85%;
         max-height: 100%;
         align-items: center;
         justify-content: center;
         gap: 30px;
         font-family: "Anton", sans-serif;
         color: aliceblue;
-        background: linear-gradient(90deg,greenyellow,violet,greenyellow);
+        background: linear-gradient(90deg, greenyellow, violet, greenyellow);
         padding: 20px;
         border-radius: 20px;
         position: relative;
 
-        
+
 
         div {
             display: flex;
@@ -82,11 +83,12 @@
             height: 200px;
             flex-direction: column;
             align-items: center;
+
             h2 {
                 display: flex;
                 justify-content: center;
                 color: black;
-                
+
                 position: absolute;
                 bottom: 0;
                 width: 300px;
@@ -103,8 +105,8 @@
             font-size: 20px;
         }
 
-        button{
-            font-family: "Anton", sans-serif ;
+        button {
+            font-family: "Anton", sans-serif;
             width: 230px;
             height: 30px;
             border-radius: 10px;
@@ -128,38 +130,105 @@
         position: absolute;
         left: 0;
         z-index: 2;
-       
 
-        div {
-          display: flex;
-          flex-direction: column;
-          background: linear-gradient(180deg,green,black,green);
-          width: 1300px;
-          height: 900px;
-          border-radius: 30px;
-          gap: 40px;
-          p{
+        .modaUserCompra {
             display: flex;
-            align-items: center;
-            height: 50px;
-            color: red;
-            padding-left: 30px;
-            font-size: 30px;
-            cursor: pointer;
-
-            &:hover {
-                zoom: 1.1;
-                color: lime;
-            }
-          }
-
-          h2{
-            display: flex;
+            flex-direction: column;
             justify-content: center;
-            color: aliceblue;
-            font-family: "Anton", sans-serif ;
-            font-size: 30px;
-          }
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(190deg, lime, violet, lime);
+            gap: 50px;
+
+            .datosUserCompra {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .DetallesCompra {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
+                button {
+                    font-family: "Anton", sans-serif;
+                    width: 150px;
+                    height: 30px;
+                    border-radius: 30px;
+                    border: none;
+                    cursor: pointer;
+                    background: linear-gradient(90deg, lime, rgba(0, 0, 0, 0.601), lime);
+                    font-size: 20px;
+                    margin-top: 30px;
+
+                    &:hover {
+                        background: linear-gradient(90deg, lime, green, lime);
+                        box-shadow: 0 0 10px 10px greenyellow;
+                        zoom: 1.1;
+                    }
+                }
+            }
+
+            h3 {
+                display: flex;
+                height: 120px;
+                font-size: 80px;
+                text-decoration: underline;
+            }
+
+            h2 {
+                display: flex;
+                justify-content: center;
+                font-family: "Anton", sans-serif;
+                font-size: 70px;
+                color: aliceblue;
+            }
+
+            p {
+                display: flex;
+                justify-content: center;
+                font-size: 25px;
+                font-family: "Anton", sans-serif;
+            }
+
+        }
+
+
+        .modal {
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(180deg, green, black, green);
+            width: 1300px;
+            height: 900px;
+            border-radius: 30px;
+            gap: 40px;
+
+            p {
+                display: flex;
+                align-items: center;
+                height: 50px;
+                color: red;
+                padding-left: 30px;
+                font-size: 30px;
+                cursor: pointer;
+
+                &:hover {
+                    zoom: 1.1;
+                    color: lime;
+                }
+            }
+
+            h2 {
+                display: flex;
+                justify-content: center;
+                color: aliceblue;
+                font-family: "Anton", sans-serif;
+                font-size: 30px;
+            }
         }
 
         form {
@@ -175,7 +244,7 @@
                 height: 50px;
                 border-radius: 10px;
                 border: none;
-                font-family: "Anton", sans-serif ;
+                font-family: "Anton", sans-serif;
                 font-size: 20px;
                 padding-left: 10px;
             }
@@ -185,16 +254,22 @@
                 height: 50px;
                 border-radius: 10px;
                 border: none;
-                font-family: "Anton", sans-serif ;
+                font-family: "Anton", sans-serif;
                 font-size: 20px;
                 cursor: pointer;
-                background: linear-gradient(90deg,lime,green,lime);
+                background: linear-gradient(90deg, lime, green, lime);
+
                 &:hover {
-                 box-shadow: 0 0 10px 10px lime;
-                 zoom: 1.1;
+                    box-shadow: 0 0 10px 10px lime;
+                    zoom: 1.1;
                 }
             }
+
         }
+
+
+
     }
+
 
 }

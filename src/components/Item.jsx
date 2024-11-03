@@ -1,9 +1,25 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
  
-  //Armado de mi item
-  
+ 
+
+ //Estado para manejar el stock
+ const [noStock,setNoStock] = useState(false)
+//Estado para manejar el stock
+
+//Efeccto para renderizar el stock a true o false
+ useEffect(()=> {
+  if(item.stock === 0) {
+    setNoStock(true)
+  }else {
+    setNoStock(false)
+  }
+ },[])
+//Efeccto para renderizar el stock a true o false
+
+   //Armado de mi item
   return (
     <div className="item">
       <div  className="link-detail">
@@ -14,7 +30,9 @@ const Item = ({ item }) => {
         <p>$ {item.precio}</p>
         <p>Stock disponible {item.stock}</p>
       </div>
-     <Link to={`/item/${item.id}`}><button >Mas info</button></Link> 
+    {
+      noStock ? <p>no hay stock del producto 😥</p> : <Link to={`/item/${item.id}`}><button >Mas info</button></Link> 
+    } 
     </div>
   );
 };

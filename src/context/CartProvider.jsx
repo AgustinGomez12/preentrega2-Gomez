@@ -47,11 +47,13 @@ export const CartProvider = ({ children }) => {
     setTotalQuantity(total);
   };
   //Funcion para las cantidades del carrito
-
+ 
+  //Funcion para el precio total
   const verPrice = (updatedCart) => {
     const total = updatedCart.reduce((acc, product) => acc + (product.precio * product.quantity), 0);
     setTotalPrice(total)
   }
+  //Funcion para el precio total
   
   //Actualiza las cantidades totales en la inicialización
   useEffect(()=>{
@@ -59,11 +61,14 @@ export const CartProvider = ({ children }) => {
   verPrice(cart);
   },[cart])
   //Actualiza las cantidades totales en la inicialización
-
+  
+  const vaciarCarro = () => {
+    setCart([])
+  }
   
   return (
     <Cart.Provider
-      value={{ cart, addCart,totalQuantity,setCart,totalPrice}}
+      value={{ cart, addCart,totalQuantity,setCart,totalPrice,vaciarCarro}}
     >
       {children}
     </Cart.Provider>
